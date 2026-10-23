@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>知闯岛 · 小学生知识闯关工作台</title>
+<meta name="description" content="知闯岛：面向小学 3-6 年级的知识闯关工作台，内置数学、语文、英语、科学题库，离线可用，进度保存在本机。">
+<meta name="theme-color" content="#0f4c81">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230f4c81'/%3E%3Ctext x='50' y='68' font-size='58' text-anchor='middle'%3E%F0%9F%8F%9D%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body>
+
+<!-- 全局加载占位，脚本接管后替换 -->
+<div id="app" class="app-shell">
+  <div class="boot-screen">
+    <div class="boot-logo">🏝️</div>
+    <h1 class="boot-title">知闯岛</h1>
+    <p class="boot-sub">正在装载知识岛屿…</p>
+  </div>
+</div>
+
+<div id="toast-layer" class="toast-layer" aria-live="polite" aria-atomic="false"></div>
+<div id="modal-layer" class="modal-layer" hidden></div>
+
+<noscript>
+  <div style="padding:24px;font-family:sans-serif">
+    知闯岛需要开启 JavaScript 才能运行，请在浏览器设置中启用后重新打开本页面。
+  </div>
+</noscript>
+
+<!-- ========== 0. 版式默认值（电脑版 / 手机版打包时会被改写） ========== -->
+<script src="assets/js/layout-default.js"></script>
+<!-- ========== 1. 基础工具 ========== -->
+<script src="assets/js/util.js"></script>
+<!-- ========== 2. 题库校验与 CSV/JSON 解析（浏览器与 Node 双用） ========== -->
+<script src="assets/js/validate.js"></script>
+<!-- ========== 3. 本地存储（进度 / 错题 / 星星经验 / 自定义题库） ========== -->
+<script src="assets/js/store.js"></script>
+<!-- ========== 4. 题型注册表（内置题库通过 ZCD.registerPack 注册） ========== -->
+<script src="assets/js/registry.js"></script>
+<!-- ========== 5. 奖励规则与等级 ========== -->
+<script src="assets/js/rewards.js"></script>
+<!-- ========== 5b. 轻量知识掌握评估（固定规则，非 AI 推断） ========== -->
+<script src="assets/js/mastery.js"></script>
+
+<!-- ========== 6. 内置题库：16 个知识包 / 400 道题 ========== -->
+<script src="assets/data/g3-math.js"></script>
+<script src="assets/data/g3-chinese.js"></script>
+<script src="assets/data/g3-english.js"></script>
+<script src="assets/data/g3-science.js"></script>
+<script src="assets/data/g4-math.js"></script>
+<script src="assets/data/g4-chinese.js"></script>
+<script src="assets/data/g4-english.js"></script>
+<script src="assets/data/g4-science.js"></script>
+<script src="assets/data/g5-math.js"></script>
+<script src="assets/data/g5-chinese.js"></script>
+<script src="assets/data/g5-english.js"></script>
+<script src="assets/data/g5-science.js"></script>
+<script src="assets/data/g6-math.js"></script>
+<script src="assets/data/g6-chinese.js"></script>
+<script src="assets/data/g6-english.js"></script>
+<script src="assets/data/g6-science.js"></script>
+
+<!-- ========== 7. 视图层 ========== -->
+<script src="assets/js/ui.js"></script>
+<script src="assets/js/map-art.js"></script>
+<script src="assets/js/views-lobby.js"></script>
+<script src="assets/js/views-learn.js"></script>
+<script src="assets/js/views-quiz.js"></script>
+<script src="assets/js/views-progress.js"></script>
+<script src="assets/js/views-manage.js"></script>
+
+<!-- ========== 8. 路由与启动 ========== -->
+<script src="assets/js/app.js"></script>
+</body>
+</html>
